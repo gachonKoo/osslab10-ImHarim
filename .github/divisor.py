@@ -1,4 +1,4 @@
-
+$ python script_name.py 100
 import sys
 
 number = int(sys.argv[1])
