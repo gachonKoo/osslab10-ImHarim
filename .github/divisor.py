@@ -1,10 +1,11 @@
-$ python script_name.py 100
-import sys
+# tests/test_example.py
+import unittest
+from main import find_divisors  # 'main'이 테스트할 파일의 이름인 경우
 
-number = int(sys.argv[1])
+class TestFindDivisors(unittest.TestCase):
+    def test_divisors(self):
+        self.assertEqual(find_divisors(10), [1, 2, 5, 10])
+        self.assertEqual(find_divisors(15), [1, 3, 5, 15])
 
-for i in range(1, number + 1):
-    if number % i == 0:
-        print(i, end=" ")
-
-print()
+if __name__ == "__main__":
+    unittest.main()
