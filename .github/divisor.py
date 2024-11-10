@@ -1,10 +1,11 @@
-import unittest
-from main import find_divisors  # 'main'이 테스트할 파일의 이름인 경우
+import sys
 
-class TestFindDivisors(unittest.TestCase):
-    def test_divisors(self):
-        self.assertEqual(find_divisors(10), [1, 2, 5, 10])
-        self.assertEqual(find_divisors(15), [1, 3, 5, 15])
+# 명령줄 인자로 받은 수를 정수로 변환
+number = int(sys.argv[1])
 
-if __name__ == "__main__":
-    unittest.main()
+# 1부터 number까지 순회하며 나누어 떨어지는 수를 찾기
+for i in range(1, number + 1):
+    if number % i == 0:
+        print(i, end=" ")
+
+print()
