@@ -1,10 +1,10 @@
-def find_divisors(number):
-    divisors = []
-    for i in range(1, number + 1):
-        if number % i == 0:
-            divisors.append(i)
-    return divisors
+import unittest
+from main import find_divisors  # 'main'이 테스트할 파일의 이름인 경우
+
+class TestFindDivisors(unittest.TestCase):
+    def test_divisors(self):
+        self.assertEqual(find_divisors(10), [1, 2, 5, 10])
+        self.assertEqual(find_divisors(15), [1, 3, 5, 15])
 
 if __name__ == "__main__":
-    number = int(input("Enter a number: "))
-    print(f"Divisors of {number} are: {find_divisors(number)}")
+    unittest.main()
